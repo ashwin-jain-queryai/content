@@ -897,7 +897,7 @@ Function TestModule()
 		Set-Location $env:SMS_ADMIN_UI_PATH\..\
 		Import-Module .\ConfigurationManager.psd1
 		Set-Location "$( $SiteCode ):"
-		if ((Get-Module -Name ConfigurationManager).Version -eq $null)
+		if ($null -eq (Get-Module -Name ConfigurationManager).Version)
 		{
 			throw "Could not find SCCM modules in the SCCM machine"
 		}
